@@ -1,11 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const { OpenAI } = require('@langchain/openai');
 require('dotenv').config();
 
 const app = express();
 const port = 3000;
 
-console.log(process.env.OPENAI_API_KEY);
+const model = new OpenAI({
+    openAIApiKey: process.env.OPENAI_API_KEY,
+    temperature: 0,
+    model: 'gpt-4.0-turbo',
+});
+
+// console.log(model);
+
+// console.log(process.env.OPENAI_API_KEY);
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
