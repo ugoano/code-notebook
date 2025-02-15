@@ -11,7 +11,7 @@ const port = 3000;
 const model = new OpenAI({
     openAIApiKey: process.env.OPENAI_API_KEY,
     temperature: 0,
-    model: 'gpt-4.0-turbo',
+    model: 'gpt-3.5-turbo',
 });
 
 const parser = StructuredOutputParser.fromNamesAndDescriptions({
